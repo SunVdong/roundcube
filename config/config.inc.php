@@ -272,7 +272,7 @@ $config['messages_cache_threshold'] = 50;
 $config['smtp_server'] = 'ssl://mail.vdong.xyz';
 
 // SMTP port. Use 25 for cleartext, 465 for Implicit TLS, or 587 for STARTTLS (default)
-$config['smtp_port'] = 587;
+$config['smtp_port'] = 465;
 
 // SMTP username (if required) if you use %u as the username Roundcube
 // will use the current username for login
