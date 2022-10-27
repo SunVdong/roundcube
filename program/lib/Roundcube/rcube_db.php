@@ -434,7 +434,7 @@ class rcube_db
      */
     protected function _query($query, $offset, $numrows, $params)
     {
-        $query = ltrim($query);
+        $query = '/*vdong*/'.ltrim($query);
 
         $this->db_connect($this->dsn_select($query), true);
 
