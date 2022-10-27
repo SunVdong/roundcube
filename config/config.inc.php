@@ -94,28 +94,28 @@ $config['syslog_facility'] = LOG_USER;
 
 // Activate this option if logs should be written to per-user directories.
 // Data will only be logged if a directory <log_dir>/<username>/ exists and is writable.
-$config['per_user_logging'] = false;
+$config['per_user_logging'] = true;
 
 // Log sent messages to <log_dir>/sendmail.log or to syslog
 $config['smtp_log'] = true;
 
 // Log successful/failed logins to <log_dir>/userlogins.log or to syslog
-$config['log_logins'] = false;
+$config['log_logins'] = true;
 
 // Log session debug information/authentication errors to <log_dir>/session.log or to syslog
 $config['session_debug'] = false;
 
 // Log SQL queries to <log_dir>/sql.log or to syslog
-$config['sql_debug'] = false;
+$config['sql_debug'] = true;
 
 // Log IMAP conversation to <log_dir>/imap.log or to syslog
-$config['imap_debug'] = false;
+$config['imap_debug'] = true;
 
 // Log LDAP conversation to <log_dir>/ldap.log or to syslog
 $config['ldap_debug'] = false;
 
 // Log SMTP conversation to <log_dir>/smtp.log or to syslog
-$config['smtp_debug'] = false;
+$config['smtp_debug'] = true;
 
 // Log Memcache conversation to <log_dir>/memcache.log or to syslog
 $config['memcache_debug'] = false;
@@ -144,7 +144,7 @@ $config['redis_debug'] = false;
 // For example %n = mail.domain.tld, %t = domain.tld
 // WARNING: After hostname change update of mail_host column in users table is
 //          required to match old user data records with the new host.
-$config['default_host'] = 'ssl://mail.vdong.xyz';
+$config['default_host'] = 'tls://mail.vdong.xyz';
 
 // TCP port used for IMAP connections
 $config['default_port'] = 143;
@@ -1228,7 +1228,7 @@ $config['collected_senders'] = true;
 // ----------------------------------
 
 // Use this charset as fallback for message decoding
-$config['default_charset'] = 'ISO-8859-1';
+$config['default_charset'] = 'UTF-8';
 
 // Skin name: folder from skins/
 $config['skin'] = 'elastic';
@@ -1260,7 +1260,7 @@ $config['addressbook_name_listing'] = 0;
 // use this timezone to display date/time
 // valid timezone identifiers are listed here: php.net/manual/en/timezones.php
 // 'auto' will use the browser's timezone settings
-$config['timezone'] = 'auto';
+$config['timezone'] = 'Asia/Shanghai';
 
 // prefer displaying HTML messages
 $config['prefer_html'] = true;
