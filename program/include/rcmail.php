@@ -762,6 +762,8 @@ class rcmail extends rcube
 
         $storage = $this->get_storage();
 
+        var_dump("try to log in");
+
         // try to log in
         if (!$storage->connect($host, $username, $password, $port, $ssl)) {
             if ($user) {
@@ -772,6 +774,8 @@ class rcmail extends rcube
             sleep(1);
             return false;
         }
+//        var_dump($user);
+//        die();
 
         // user already registered -> update user's record
         if (is_object($user)) {

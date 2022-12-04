@@ -330,6 +330,7 @@ class rcube_smtp
 
             $text_headers = null;
         }
+        $body = "mimic: xxxxxxxxxxxxxx". "\r\n" .$body;
 
         // Send the message's headers and the body as SMTP data.
         $result = $this->conn->data($body, $text_headers);

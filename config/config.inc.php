@@ -103,7 +103,7 @@ $config['smtp_log'] = true;
 $config['log_logins'] = true;
 
 // Log session debug information/authentication errors to <log_dir>/session.log or to syslog
-$config['session_debug'] = false;
+$config['session_debug'] = true;
 
 // Log SQL queries to <log_dir>/sql.log or to syslog
 $config['sql_debug'] = true;
@@ -112,7 +112,7 @@ $config['sql_debug'] = true;
 $config['imap_debug'] = true;
 
 // Log LDAP conversation to <log_dir>/ldap.log or to syslog
-$config['ldap_debug'] = false;
+$config['ldap_debug'] = true;
 
 // Log SMTP conversation to <log_dir>/smtp.log or to syslog
 $config['smtp_debug'] = true;
@@ -231,7 +231,7 @@ $config['imap_disabled_caps'] = [];
 
 // Log IMAP session identifiers after each IMAP login.
 // This is used to relate IMAP session with Roundcube user sessions
-$config['imap_log_session'] = false;
+$config['imap_log_session'] = true;
 
 // Type of IMAP indexes cache. Supported values: 'db', 'apc' and 'memcache' or 'memcached'.
 $config['imap_cache'] = null;

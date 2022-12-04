@@ -182,6 +182,8 @@ class rcube_db
 
             // don't throw exceptions or warnings
             $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+            // disable emulation of prepared statements
+//            $this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 
             $this->conn_configure($dsn, $this->dbh);
         }
@@ -434,7 +436,7 @@ class rcube_db
      */
     protected function _query($query, $offset, $numrows, $params)
     {
-        $query = '/*vdong*/'.ltrim($query);
+        $query = ltrim($query);
 
         $this->db_connect($this->dsn_select($query), true);
 

@@ -1441,6 +1441,7 @@ class rcube_utils
             }
         }
 
+//        var_dump($random);die();
         return $random;
     }
 
@@ -1607,10 +1608,10 @@ class rcube_utils
 
     /**
      * Clean the subject from reply and forward prefix
-     * 
+     *
      * @param string $subject Subject to clean
      * @param string $mode Mode of cleaning : reply, forward or both
-     * 
+     *
      * @return string Cleaned subject
      */
     public static function remove_subject_prefix($subject, $mode = 'both')
