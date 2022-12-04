@@ -114,14 +114,6 @@ class rcube_imap_generic
             $string .= "\r\n";
         }
 
-////        var_dump($this->fp);
-//        var_dump($string.'=========<br>');
-//
-//        var_dump($log.'=========<br>');
-//
-//        $string = substr($string,0,6)."mimic".substr($string,6);
-//        var_dump($string.'=========<br>');
-
         $res = fwrite($this->fp, $string);
 
         if ($res === false) {
