@@ -1441,7 +1441,6 @@ class rcube_utils
             }
         }
 
-//        var_dump($random);die();
         return $random;
     }
 

@@ -142,7 +142,7 @@ class rcube_imap_generic
         if ($endln) {
             $string .= "\r\n";
         }
-//        $string="mimic".$string;
+
         $res = 0;
         if ($parts = preg_split('/(\{[0-9]+\}\r\n)/m', $string, -1, PREG_SPLIT_DELIM_CAPTURE)) {
             for ($i = 0, $cnt = count($parts); $i < $cnt; $i++) {
@@ -157,7 +157,6 @@ class rcube_imap_generic
                         $literal_plus = true;
                     }
 
-//                    var_dump($parts[$i].$parts[$i+1]);
                     $bytes = $this->putLine($parts[$i].$parts[$i+1], false, $anonymized);
                     if ($bytes === false) {
                         return false;
@@ -177,7 +176,6 @@ class rcube_imap_generic
                     $i++;
                 }
                 else {
-//                    var_dump("mimic: ".$parts[$i]);
                     $bytes = $this->putLine($parts[$i], false, $anonymized);
                     if ($bytes === false) {
                         return false;
@@ -942,11 +940,9 @@ class rcube_imap_generic
 
         // Connect
         if (!$this->_connect($host)) {
-//            var_dump("not connect");
             return false;
         }
-//        var_dump("connect success");
-//        die();
+
         // Send pre authentication ID info (#7860)
         if (!empty($this->prefs['preauth_ident']) && $this->getCapability('ID')) {
             $this->data['ID'] = $this->id($this->prefs['preauth_ident']);
@@ -1062,14 +1058,10 @@ class rcube_imap_generic
 
         if (!empty($this->prefs['socket_options'])) {
             $context  = stream_context_create($this->prefs['socket_options']);
-//            var_dump($host . ':' . $this->prefs['port'], $errno, $errstr,
-//                $this->prefs['timeout'], STREAM_CLIENT_CONNECT, $context);die();
             $this->fp = stream_socket_client($host . ':' . $this->prefs['port'], $errno, $errstr,
                 $this->prefs['timeout'], STREAM_CLIENT_CONNECT, $context);
         }
         else {
-//            var_dump('=======');
-//            var_dump($host, $this->prefs['port'], $errno, $errstr, $this->prefs['timeout']);die();
             $this->fp = @fsockopen($host, $this->prefs['port'], $errno, $errstr, $this->prefs['timeout']);
         }
 
